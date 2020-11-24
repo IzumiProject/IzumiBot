@@ -1,10 +1,10 @@
 # Using Groovy
-FROM biansepang/weebproject:groovy
+FROM izumiproject/izumibot:groovy
 
 # Clone repo and prepare working directory
-RUN git clone -b master https://github.com/BianSepang/WeebProject /home/weebproject/
-RUN mkdir /home/weebproject/bin/
-WORKDIR /home/weebproject/
+RUN git clone -b master https://github.com/IzumiProject/IzumiBot /home/izumibot/
+RUN mkdir /home/IzumiBot/bin/
+WORKDIR /home/IzumiBot/
 
 # Finalization
 CMD ["python3","-m","userbot"]
