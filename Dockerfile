@@ -1,5 +1,5 @@
 # Using Groovy
-FROM izumiproject/izumibot:groovy
+FROM biansepang/weebproject:groovy
 
 # Clone repo and prepare working directory
 RUN git clone -b master https://github.com/IzumiReina/IzumiBot /home/izumibot/
