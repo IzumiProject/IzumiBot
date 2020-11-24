@@ -168,7 +168,7 @@ async def upstream(event):
             return await event.edit(
                 f"`Unfortunately, the directory {error} "
                 "does not seem to be a git repository.\n"
-                "But we can fix that by force updating the userbot using "
+                "But we can fix that by force updating the IzumiBot using "
                 ".up now.`"
             )
         repo = Repo.init()
@@ -200,13 +200,13 @@ async def upstream(event):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     """ - Special case for deploy - """
     if conf == "dep":
-        await event.edit("`Deploying userbot, please wait....`")
+        await event.edit("`Deploying IzumiBot, please wait....`")
         await deploy(event, repo, ups_rem, ac_br, txt)
         return
 
     if changelog == "" and force_update is False:
         await event.edit(
-            "\n`Your` **USERBOT** `is`  **up-to-date**  `with`  "
+            "\n`Your` **IzumiBot** `is`  **up-to-date**  `with`  "
             f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
@@ -218,10 +218,10 @@ async def upstream(event):
 
     if force_update:
         await event.edit(
-            "`Force-Syncing to latest stable userbot code, please wait...`"
+            "`Force-Syncing to latest stable IzumiBot code, please wait...`"
         )
     if conf == "now":
-        await event.edit("`Updating userbot, please wait....`")
+        await event.edit("`Updating IzumiBot, please wait....`")
         await update(event, repo, ups_rem, ac_br)
     return
 
